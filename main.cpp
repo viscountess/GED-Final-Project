@@ -32,6 +32,7 @@
 // Thanks to Cristi Szabo for fixes to label rendering to resolve issues with
 // some versions of OpenGL drivers/hardware
 
+
 #include "game.h"
 
 // SDL projects do not automatically work with the console window. 
