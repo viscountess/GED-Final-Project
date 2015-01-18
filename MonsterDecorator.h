@@ -3,7 +3,7 @@
 
 #include "AbstractNPC.h"
 
-//MonsterNPC implements AbstractNPC - all methods defined inline
+//MonsterNDecorator implements AbstractNPC - all methods defined inline
 class MonsterDecorator : public AbstractNPC{
 public:
 	virtual void render();
@@ -12,5 +12,10 @@ public:
 	virtual int getStrength();
 	virtual int getRefreshRate();
 	virtual int getDropRate();
+
+	//constructor
+	MonsterDecorator();
+	//deconstructor
+	~MonsterDecorator();
 };
 #endif //monsterdecorator_INCLUDE

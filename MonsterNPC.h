@@ -12,6 +12,11 @@ public:
 	virtual int getStrength();
 	virtual int getRefreshRate();
 	virtual int getDropRate();
+
+	//constructor
+	MonsterNPC();
+	//deconstructor
+	~MonsterNPC();
 };
 
 #endif //monsternpc_INCLUDE
