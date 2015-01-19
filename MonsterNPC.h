@@ -2,21 +2,36 @@
 #define monsternpc_INCLUDE
 
 #include "AbstractNPC.h"
+#include "Bitmap.h"
+#include <string>
 
-//MonsterNPC implements AbstractNPC - all methods defined inline
+using std::string;
+
+//MonsterNPC implements AbstractNPC with inline implementation
 class MonsterNPC : public AbstractNPC{
 public:
 	virtual void render();
-	virtual int getMana();
-	virtual int getHealth();
-	virtual int getStrength();
-	virtual int getRefreshRate();
-	virtual int getDropRate();
+	virtual int getHealth() { return health; }
+	virtual int getStrength() { return strength; }
+	virtual int getRefreshRate() { return refreshRate; }
+	virtual int getDropRate() { return dropRate; }
 
 	//constructor
-	MonsterNPC();
+	MonsterNPC(char * basename);
 	//deconstructor
-	~MonsterNPC();
+	~MonsterNPC(){}
+
+protected:
+	int health;
+	int strength;
+	int refreshRate;
+	int dropRate;
+
+private:
+	string name;
+
+	//pointer member to image
+	Bitmap *monster;
 };
 
 #endif //monsternpc_INCLUDE

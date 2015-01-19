@@ -6,16 +6,18 @@
 //MonsterNDecorator implements AbstractNPC - all methods defined inline
 class MonsterDecorator : public AbstractNPC{
 public:
-	virtual void render();
-	virtual int getMana();
-	virtual int getHealth();
-	virtual int getStrength();
-	virtual int getRefreshRate();
-	virtual int getDropRate();
+	virtual void render(){ npc->render(); }
+	virtual int getHealth(){ return npc->getHealth(); }
+	virtual int getStrength(){ return npc->getStrength(); }
+	virtual int getRefreshRate(){ return npc->getRefreshRate(); }
+	virtual int getDropRate(){ return npc->getDropRate(); }
 
 	//constructor
-	MonsterDecorator();
+	MonsterDecorator(AbstractNPC *n) { npc = n; }
 	//deconstructor
-	~MonsterDecorator();
+	~MonsterDecorator(){}
+
+private:
+	AbstractNPC *npc;
 };
 #endif //monsterdecorator_INCLUDE

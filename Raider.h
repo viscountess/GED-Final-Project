@@ -6,16 +6,17 @@
 //Raider implements MonsterDecorator - all methods defined inline
 class Raider : public MonsterDecorator{
 public:
-	virtual void render();
-	virtual int getMana();
-	virtual int getHealth();
-	virtual int getStrength();
-	virtual int getRefreshRate();
-	virtual int getDropRate();
+	virtual void render(){ MonsterDecorator::render(); }
+	virtual int getHealth() { return MonsterDecorator::getHealth(); }
+	virtual int getStrength() { return MonsterDecorator::getStrength() + 3; }
+	virtual int getRefreshRate(){ return MonsterDecorator::getRefreshRate() + 12; }
+	virtual int getDropRate() { return MonsterDecorator::getDropRate() + 40; }
 
 	//constructor
-	Raider();
+	Raider(AbstractNPC *n) : MonsterDecorator(n){}
 	//deconstructor
-	~Raider();
+	~Raider(){}
+
+};
 
 #endif //raider_INCLUDE

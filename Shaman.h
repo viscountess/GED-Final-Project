@@ -6,17 +6,16 @@
 //Shaman implements MonsterDecorator - all methods defined inline
 class Shaman : public MonsterDecorator{
 public:
-	virtual void render();
-	virtual int getMana();
-	virtual int getHealth();
-	virtual int getStrength();
-	virtual int getRefreshRate();
-	virtual int getDropRate();
+	virtual void render(){ MonsterDecorator::render(); }
+	virtual int getHealth() { return MonsterDecorator::getHealth(); }
+	virtual int getStrength() { return MonsterDecorator::getStrength() + 10; }
+	virtual int getRefreshRate(){ return MonsterDecorator::getRefreshRate() + 8; }
+	virtual int getDropRate() { return MonsterDecorator::getDropRate(); }
 
 	//constructor
-	Shaman();
+	Shaman(AbstractNPC *n) : MonsterDecorator(n) {}
 	//deconstructor
-	~Shaman();
+	~Shaman(){}
 };
 
 #endif //shaman_INCLUDE

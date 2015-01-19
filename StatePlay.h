@@ -2,6 +2,7 @@
 #define stateplay_INCLUDE
 
 #include "Game.h"
+#include "AbstractNPC.h"
 
 //StatePlay inherits GameState class
 class StatePlay:public GameState{
@@ -18,36 +19,13 @@ public:
 
 private:
 
-	//Moved these variables from game.h as would need these for the play state
-	float xpos;
-	float ypos;
-	float xsize;
-	float ysize;
-
-	float targetXPos;
-	float targetYPos;
-	float targetXSize;
-	float targetYSize;
-
-	int score;
-
 	clock_t lastTime; // clock_t is an integer type
 	clock_t currentTime; // use this to track time between frames
 
 	TTF_Font* textFont;	// SDL type for True-Type font rendering
 
-	// data for labels
-	int width;
-	int height;
-	int playerWidth, playerHeight;
-	int targetWidth, targetHeight;
-
-	//pointers of labels
-	Label* playerLabel;
-	Label* targetLabel;
-
-	
-
+	//member pointer for monster class
+	AbstractNPC *monster;
 };
 
 #endif
