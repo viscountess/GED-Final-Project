@@ -11,6 +11,8 @@ public:
 	virtual int getStrength() { return MonsterDecorator::getStrength() + 3; }
 	virtual int getRefreshRate(){ return MonsterDecorator::getRefreshRate() + 12; }
 	virtual int getDropRate() { return MonsterDecorator::getDropRate() + 40; }
+	virtual void adjustXPos(int x) { MonsterDecorator::adjustXPos(x); }
+	virtual void adjustYPos(int y) { MonsterDecorator::adjustYPos(y); }
 
 	//constructor
 	Raider(AbstractNPC *n) : MonsterDecorator(n){}

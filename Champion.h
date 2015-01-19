@@ -11,6 +11,8 @@ public:
 	virtual int getStrength() { return MonsterDecorator::getStrength() + 7; }
 	virtual int getRefreshRate(){ return MonsterDecorator::getRefreshRate() + 3; }
 	virtual int getDropRate() { return MonsterDecorator::getDropRate(); }
+	virtual void adjustXPos(int x) { MonsterDecorator::adjustXPos(x); }
+	virtual void adjustYPos(int y) { MonsterDecorator::adjustYPos(y); }
 
 	//constructor
 	Champion(AbstractNPC *n) : MonsterDecorator(n){}

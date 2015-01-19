@@ -25,7 +25,11 @@ private:
 	TTF_Font* textFont;	// SDL type for True-Type font rendering
 
 	//member pointer for monster class
-	AbstractNPC *monster;
+	//three monsters to appear on the map
+	AbstractNPC *monster[3];
+
+	//two player monsters to appear on screen
+	AbstractNPC *playerNPC[2];
 };
 
 #endif

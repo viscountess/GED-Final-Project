@@ -15,9 +15,11 @@ public:
 	virtual int getStrength() { return strength; }
 	virtual int getRefreshRate() { return refreshRate; }
 	virtual int getDropRate() { return dropRate; }
+	virtual void adjustXPos(int x) { xpos += x; }
+	virtual void adjustYPos(int y) { ypos += y; }
 
 	//constructor
-	MonsterNPC(char * basename);
+	MonsterNPC(char * basename, int x, int y);
 	//deconstructor
 	~MonsterNPC(){}
 
@@ -32,6 +34,9 @@ private:
 
 	//pointer member to image
 	Bitmap *monster;
+
+	//member variables to be used for randomly positioning the monsters
+	int xpos, ypos;
 };
 
 #endif //monsternpc_INCLUDE

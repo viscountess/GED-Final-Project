@@ -11,6 +11,8 @@ public:
 	virtual int getStrength(){ return npc->getStrength(); }
 	virtual int getRefreshRate(){ return npc->getRefreshRate(); }
 	virtual int getDropRate(){ return npc->getDropRate(); }
+	virtual void adjustXPos(int x) { npc->adjustXPos(x); }
+	virtual void adjustYPos(int y) { npc->adjustYPos(y); }
 
 	//constructor
 	MonsterDecorator(AbstractNPC *n) { npc = n; }

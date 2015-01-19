@@ -10,6 +10,8 @@ public:
 	virtual int getStrength() = 0;
 	virtual int getRefreshRate() = 0;
 	virtual int getDropRate() = 0;
+	virtual void adjustXPos(int x) = 0;
+	virtual void adjustYPos(int y) = 0;
 	virtual ~AbstractNPC(){}
 
 };
