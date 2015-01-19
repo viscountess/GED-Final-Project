@@ -30,28 +30,21 @@ void StatePlay::init(){
 
 	lastTime = clock();
 
-	monster[0] = new Brute(new MonsterNPC("Brute", 512, 700));
-	monster[1] = new Fodder(new MonsterNPC("Fodder", 700, 0));
-	monster[2] = new Raider(new MonsterNPC("Raider", 300, 300));
-
-	playerNPC[0] = new Champion(new MonsterNPC("Champion", 100, 600));
-	playerNPC[1] = new Shaman(new MonsterNPC("Shaman", 150, 800));
 
 }
 
 //draw the game state
-void StatePlay::draw(SDL_Window * window){
+void StatePlay::draw(SDL_Window * window, Game &context){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear window
 
 	//render the monsters onscreen
 	for (int i = 0; i < 3; i++)
 	{
-		monster[i]->render();
+		context.getMonsterManager()->getMonster(i)->render();
 	}
 
-	//render the player monsters onscreen
-	for (int j = 0; j < 2; j++)
-		playerNPC[j]->render();
+	//render the player onscreen
+		context.getMonsterManager()->getPlayer()->render();
 	
 
 	// Calculate ms/frame
@@ -79,19 +72,19 @@ void StatePlay::handleEvent(SDL_Event const &sdlEvent, Game &context){
 		{
 		case SDLK_UP:
 		case 'w': case 'W':
-			playerNPC[0]->adjustYPos(1);
+			context.getMonsterManager()->getPlayer()->adjustYPos(2);
 			break;
 		case SDLK_DOWN:
 		case 's': case 'S':
-			playerNPC[0]->adjustYPos(-1);
+			context.getMonsterManager()->getPlayer()->adjustYPos(-2);
 			break;
 		case SDLK_LEFT:
 		case 'a': case 'A':
-			playerNPC[0]->adjustXPos(-1);
+			context.getMonsterManager()->getPlayer()->adjustXPos(-2);
 			break;
 		case SDLK_RIGHT:
 		case 'd': case 'D':
-			playerNPC[0]->adjustXPos(1);
+			context.getMonsterManager()->getPlayer()->adjustXPos(2);
 			break;
 		case SDLK_ESCAPE:
 			context.setState(context.getMainMenuState());
@@ -104,7 +97,19 @@ void StatePlay::handleEvent(SDL_Event const &sdlEvent, Game &context){
 
 //update the gamestate
 void StatePlay::update(Game &context){
+	for (int i = 0; i < 3; i++)
+	{
+		//Collision detection
+		float x = context.getMonsterManager()->getMonster(i)->getXPos() - context.getMonsterManager()->getPlayer()->getXPos();
+		float y = context.getMonsterManager()->getMonster(i)->getYPos() - context.getMonsterManager()->getPlayer()->getYPos();
+		float distToPlayer = sqrt((x*x) + (y*y));
 
+		if (distToPlayer <= 50)
+		{
+			context.getMonsterManager()->setBattleMonsterIndex(i);
+			context.setState(context.getBattleState());
+		}
+	}
 }
 
 //delete everything that is unused so that memory can be freed

@@ -55,7 +55,7 @@ void StateMainMenu::setupLabels(SDL_Color playColor, SDL_Color creditsColor, SDL
 }
 
 //draw the game state
-void StateMainMenu::draw(SDL_Window * window){
+void StateMainMenu::draw(SDL_Window * window, Game &context){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear window
 
 	//starting point for the Play button

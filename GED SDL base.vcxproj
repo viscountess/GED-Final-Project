@@ -87,9 +87,11 @@
     <ClCompile Include="label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MonsterDecorator.cpp" />
+    <ClCompile Include="MonsterManager.cpp" />
     <ClCompile Include="MonsterNPC.cpp" />
     <ClCompile Include="Raider.cpp" />
     <ClCompile Include="Shaman.cpp" />
+    <ClCompile Include="StateBattle.cpp" />
     <ClCompile Include="StateCharacterScreen.cpp" />
     <ClCompile Include="StateCreditsScreen.cpp" />
     <ClCompile Include="StateMainMenu.cpp" />
@@ -106,9 +108,11 @@
     <ClInclude Include="gamestate.h" />
     <ClInclude Include="label.h" />
     <ClInclude Include="MonsterDecorator.h" />
+    <ClInclude Include="MonsterManager.h" />
     <ClInclude Include="MonsterNPC.h" />
     <ClInclude Include="Raider.h" />
     <ClInclude Include="Shaman.h" />
+    <ClInclude Include="StateBattle.h" />
     <ClInclude Include="StateCharacterScreen.h" />
     <ClInclude Include="StateCreditsScreen.h" />
     <ClInclude Include="StateMainMenu.h" />

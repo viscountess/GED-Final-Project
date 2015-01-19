@@ -69,6 +69,12 @@
     <ClCompile Include="Shaman.cpp">
       <Filter>Source Files\Monsters</Filter>
     </ClCompile>
+    <ClCompile Include="StateBattle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -121,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="Brute.h">
       <Filter>Header Files\Monsters headers</Filter>
+    </ClInclude>
+    <ClInclude Include="StateBattle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

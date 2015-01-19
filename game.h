@@ -17,6 +17,7 @@
 
 #include "label.h"
 #include "gamestate.h"
+#include "MonsterManager.h"
 
 class Game{
 public:
@@ -32,7 +33,10 @@ public:
 	GameState *getCreditsState(void); //returns getCreditsState to the creditsState pointer
 	GameState *getMainMenuState(void); //returns getMainMenuState to the mainMenuState pointer
 	GameState *getCharacterState(void); //returns getCharacterState to the characterState pointer
+	GameState *getBattleState(void); //returns getBattleState to the battleState pointer
 	void gameQuit(); //function to set running to false so that the game quits
+
+	MonsterManager *getMonsterManager(){ return monster; } //returns monster to getMonsterManager pointer
 
 private:
 	
@@ -53,8 +57,11 @@ private:
 	GameState* creditsState;
 	GameState* splashState;
 	GameState* characterState;
+	GameState* battleState;
 
 	bool running; // set running to true
+
+	MonsterManager *monster; //a pointer to MonsterManager class
 
 };
 

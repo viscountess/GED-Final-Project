@@ -32,7 +32,7 @@ void StateCreditsScreen::init()
 	nameLabel->textToTexture("Victoria Russell", textFont, displayColor);
 }
 
-void StateCreditsScreen:: draw(SDL_Window * window) //draw the game state 
+void StateCreditsScreen::draw(SDL_Window * window, Game &context) //draw the game state 
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear window
 

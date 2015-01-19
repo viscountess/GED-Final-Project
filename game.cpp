@@ -4,6 +4,7 @@
 #include "StateCreditsScreen.h"
 #include "StateSplashScreen.h"
 #include "StateCharacterScreen.h"
+#include "StateBattle.h"
 
 
 //Window size - windowW = width, windowH = height
@@ -113,6 +114,7 @@ void Game::init(){
 	creditsState = new StateCreditsScreen();
 	splashState = new StateSplashScreen();
 	characterState = new StateCharacterScreen();
+	battleState = new StateBattle();
 	currentState = splashState;
 
 	playState->init();
@@ -120,7 +122,10 @@ void Game::init(){
 	mainMenuState->init();
 	splashState->init();
 	characterState->init();
+	battleState->init();
 
+	monster = new MonsterManager();
+	monster->init();
 }
 
 void Game::gameQuit(){
@@ -147,7 +152,7 @@ void Game::run(){
 				currentState->handleEvent(sdlEvent, *this);
 		}
 		currentState->update(*this); //calling the update function
-		currentState->draw(window); //draw the current state to the screen
+		currentState->draw(window, *this); //draw the current state to the screen
 
 	}
 }
@@ -185,4 +190,8 @@ GameState *Game::getCreditsState(void){
 
 GameState *Game::getCharacterState(void){
 	return characterState;
+}
+
+GameState *Game::getBattleState(void){
+	return battleState;
 }

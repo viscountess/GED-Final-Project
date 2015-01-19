@@ -29,7 +29,7 @@ void StateSplashScreen::init()
 	loadLabel->textToTexture("LOADING", textFont, displayColor);
 }
 
-void StateSplashScreen::draw(SDL_Window * window) //draw the game state 
+void StateSplashScreen::draw(SDL_Window * window, Game &context) //draw the game state 
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear window
 

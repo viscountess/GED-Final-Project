@@ -14,3 +14,7 @@ void MonsterNPC::render(){
 	monster->drawAt(xpos, ypos);
 }
 
+void MonsterNPC::renderAt(int x, int y)
+{
+	monster->drawAt(x, y);
+}
