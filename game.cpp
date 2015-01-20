@@ -162,7 +162,7 @@ void Game::setState(GameState * newState){
 	{
 		
 		currentState = newState;
-		currentState->enter();
+		currentState->enter(*this);
 		
 	}
 

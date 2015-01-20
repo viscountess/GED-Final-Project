@@ -72,19 +72,19 @@ void StatePlay::handleEvent(SDL_Event const &sdlEvent, Game &context){
 		{
 		case SDLK_UP:
 		case 'w': case 'W':
-			context.getMonsterManager()->getPlayer()->adjustYPos(2);
+			context.getMonsterManager()->getPlayer()->adjustYPos(5);
 			break;
 		case SDLK_DOWN:
 		case 's': case 'S':
-			context.getMonsterManager()->getPlayer()->adjustYPos(-2);
+			context.getMonsterManager()->getPlayer()->adjustYPos(-5);
 			break;
 		case SDLK_LEFT:
 		case 'a': case 'A':
-			context.getMonsterManager()->getPlayer()->adjustXPos(-2);
+			context.getMonsterManager()->getPlayer()->adjustXPos(-5);
 			break;
 		case SDLK_RIGHT:
 		case 'd': case 'D':
-			context.getMonsterManager()->getPlayer()->adjustXPos(2);
+			context.getMonsterManager()->getPlayer()->adjustXPos(5);
 			break;
 		case SDLK_ESCAPE:
 			context.setState(context.getMainMenuState());

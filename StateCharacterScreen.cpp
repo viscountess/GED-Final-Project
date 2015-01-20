@@ -77,7 +77,7 @@ void StateCharacterScreen::Cleanup() //delete everything that is unused so that 
 void StateCharacterScreen::displayMenuText()
 {}
 
-void StateCharacterScreen::enter()
+void StateCharacterScreen::enter(Game &context)
 {
 
 }

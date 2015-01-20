@@ -15,7 +15,7 @@ public:
 	virtual void update(Game &context); //update the gamestate
 	virtual void Cleanup(); //delete everything that is unused so that memory can be freed
 	void displayMenuText(); //method to draw the menu text on the menu state
-	virtual void enter();
+	virtual void enter(Game &context);
 
 private:
 	//pointers for the text displayed on the main menu

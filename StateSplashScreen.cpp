@@ -79,7 +79,7 @@ void StateSplashScreen::Cleanup() //delete everything that is unused so that mem
 void StateSplashScreen::displayMenuText()
 {}
 
-void StateSplashScreen:: enter()
+void StateSplashScreen::enter(Game &context)
 {
 	timeOfEnteredState = SDL_GetTicks();
 

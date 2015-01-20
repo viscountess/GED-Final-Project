@@ -59,7 +59,7 @@ void StateCreditsScreen::update(Game &context){
 } 
 void StateCreditsScreen::Cleanup(){} //delete everything that is unused so that memory can be freed
 
-void StateCreditsScreen::enter()
+void StateCreditsScreen::enter(Game &context)
 {
 	yOffset = 0; //resetting the yOffset
 }

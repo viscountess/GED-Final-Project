@@ -13,7 +13,7 @@ public:
 	virtual void handleEvent(SDL_Event const &sdlEvent, Game &context) = 0; //method to handle what state the game is at
 	virtual void update(Game &context) = 0; //update the gamestate
 	virtual void Cleanup() = 0; //delete everything that is unused so that memory can be freed
-	virtual void enter() = 0;
+	virtual void enter(Game &context) = 0;
 
 };
 

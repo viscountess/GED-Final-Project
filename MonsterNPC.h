@@ -3,6 +3,7 @@
 
 #include "AbstractNPC.h"
 #include "Bitmap.h"
+#include "label.h"
 #include <string>
 
 using std::string;
@@ -20,6 +21,7 @@ public:
 	virtual void adjustYPos(int y) { ypos += y; }
 	virtual int getXPos() {return xpos; }
 	virtual int getYPos() { return ypos; }
+	virtual void subtractHealth(int h) { health -= h; }
 	//constructor
 	MonsterNPC(char * basename, int x, int y);
 	//deconstructor
@@ -39,6 +41,10 @@ private:
 
 	//member variables to be used for randomly positioning the monsters
 	int xpos, ypos;
+
+	Label *healthLabel;
+
+	TTF_Font* textFont;	// SDL type for True-Type font rendering
 };
 
 #endif //monsternpc_INCLUDE
