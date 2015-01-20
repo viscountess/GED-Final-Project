@@ -16,6 +16,8 @@ public:
 	virtual int getXPos() = 0;
 	virtual int getYPos() = 0;
 	virtual void subtractHealth(int h) = 0;
+	virtual void setHealth(int h) = 0;
+	virtual void resetPosition() = 0;
 	virtual ~AbstractNPC(){}
 
 };

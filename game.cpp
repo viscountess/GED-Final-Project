@@ -201,3 +201,11 @@ GameState *Game::getCharacterState(void){
 GameState *Game::getBattleState(void){
 	return battleState;
 }
+
+GameState *Game::getGameOverState(void){
+	return gameOverState;
+}
+
+GameState *Game::getGameWinState(void){
+	return gameWinState;
+}

@@ -17,6 +17,8 @@ public:
 	virtual int getXPos() { return MonsterDecorator::getXPos(); }
 	virtual int getYPos() { return MonsterDecorator::getYPos(); }
 	virtual void subtractHealth(int h) { MonsterDecorator::subtractHealth(h); }
+	virtual void setHealth(int h){ MonsterDecorator::setHealth(h); }
+	virtual void resetPosition(){ MonsterDecorator::resetPosition(); }
 
 	//constructor
 	Raider(AbstractNPC *n) : MonsterDecorator(n){}

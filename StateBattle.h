@@ -16,5 +16,7 @@ public:
 private:
 	int attackTime[2];
 	int attackDelay[2];
+
+	int dmgTaken; //member variable to store how much damage has been taken
 };
 #endif

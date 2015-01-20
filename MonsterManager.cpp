@@ -13,3 +13,24 @@ void MonsterManager::init(){
 
 	playerNPC = new Champion(new MonsterNPC("Champion", 100, 600));
 }
+
+void MonsterManager::reset(){
+	for (int i = 0; i < 3; i++)
+	{
+		monster[i]->setHealth(100);
+		monster[i]->resetPosition();
+	}
+	playerNPC->setHealth(100);
+	playerNPC->resetPosition();
+}
+
+bool MonsterManager::checkMonsterStillAlive(){
+
+	//check to see if any monsters are alive
+	for (int i = 0; i < 3; i++)
+	{
+		if (monster[i]->getHealth() > 0)
+			return true;
+	}
+	return false;
+}

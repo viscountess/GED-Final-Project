@@ -10,12 +10,15 @@ public:
 	~MonsterManager(){}
 
 	void init();
+	void reset();
 
 	AbstractNPC *getMonster(int m){ return monster[m]; }
 	AbstractNPC *getPlayer() { return playerNPC; }
 
 	AbstractNPC *getBattleMonster(){ return battleMonster; }
 	void setBattleMonsterIndex(int m){ battleMonster = monster[m]; }
+
+	bool checkMonsterStillAlive();
 
 private:
 	//member pointer for monster class

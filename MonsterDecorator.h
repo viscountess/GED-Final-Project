@@ -17,6 +17,8 @@ public:
 	virtual int getXPos() { return npc->getXPos(); }
 	virtual int getYPos() { return npc->getYPos(); }
 	virtual void subtractHealth(int h) { npc->subtractHealth(h); }
+	virtual void setHealth(int h){ npc->setHealth(h); }
+	virtual void resetPosition(){ npc->resetPosition(); }
 
 	//constructor
 	MonsterDecorator(AbstractNPC *n) { npc = n; }

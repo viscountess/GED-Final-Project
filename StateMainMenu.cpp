@@ -139,7 +139,10 @@ void StateMainMenu::handleDOWNpress(){
 void StateMainMenu::handleENTERpress(Game &context){
 
 	if (currentSelection == playLabel)
+	{
+		context.getMonsterManager()->reset(); //reset the monsters' and player's HP before entering a new game
 		context.setState(context.getCharacterState());
+	}
 	else if (currentSelection == creditLabel)
 		context.setState(context.getCreditsState());
 	else if (currentSelection == quitLabel)

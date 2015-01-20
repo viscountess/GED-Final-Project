@@ -19,6 +19,9 @@ MonsterNPC::MonsterNPC(char *basename, int x, int y){
 
 	xpos = x;
 	ypos = y;
+
+	initialXpos = x;
+	initialYpos = y;
 }
 
 void MonsterNPC::render(){
@@ -26,7 +29,8 @@ void MonsterNPC::render(){
 
 	delete healthLabel;
 	healthLabel = new Label();
-	string healthString("Health: ");
+	string healthString(name);
+	healthString += " Health: ";
 	healthString += to_string(getHealth());
 	healthLabel->textToTexture(healthString.c_str(), textFont, displayColor);
 
@@ -41,7 +45,8 @@ void MonsterNPC::renderAt(int x, int y)
 
 	delete healthLabel;
 	healthLabel = new Label();
-	string healthString("Health: ");
+	string healthString(name);
+	healthString += " Health: ";
 	healthString += to_string(getHealth());
 	healthLabel->textToTexture(healthString.c_str(), textFont, displayColor);
 

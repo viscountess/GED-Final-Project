@@ -21,7 +21,9 @@ public:
 	virtual void adjustYPos(int y) { ypos += y; }
 	virtual int getXPos() {return xpos; }
 	virtual int getYPos() { return ypos; }
-	virtual void subtractHealth(int h) { health -= h; }
+	virtual void subtractHealth(int h) { health -= h; if (health < 0) health = 0; }
+	virtual void setHealth(int h){ health = h; }
+	virtual void resetPosition(){ xpos = initialXpos, ypos = initialYpos; }
 	//constructor
 	MonsterNPC(char * basename, int x, int y);
 	//deconstructor
@@ -41,6 +43,8 @@ private:
 
 	//member variables to be used for randomly positioning the monsters
 	int xpos, ypos;
+
+	int initialXpos, initialYpos;
 
 	Label *healthLabel;
 

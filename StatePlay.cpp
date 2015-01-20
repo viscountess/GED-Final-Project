@@ -40,7 +40,8 @@ void StatePlay::draw(SDL_Window * window, Game &context){
 	//render the monsters onscreen
 	for (int i = 0; i < 3; i++)
 	{
-		context.getMonsterManager()->getMonster(i)->render();
+		if (context.getMonsterManager()->getMonster(i)->getHealth() > 0)
+			context.getMonsterManager()->getMonster(i)->render();
 	}
 
 	//render the player onscreen
@@ -99,15 +100,17 @@ void StatePlay::handleEvent(SDL_Event const &sdlEvent, Game &context){
 void StatePlay::update(Game &context){
 	for (int i = 0; i < 3; i++)
 	{
-		//Collision detection
-		float x = context.getMonsterManager()->getMonster(i)->getXPos() - context.getMonsterManager()->getPlayer()->getXPos();
-		float y = context.getMonsterManager()->getMonster(i)->getYPos() - context.getMonsterManager()->getPlayer()->getYPos();
-		float distToPlayer = sqrt((x*x) + (y*y));
+		if (context.getMonsterManager()->getMonster(i)->getHealth() > 0){
+			//Collision detection
+			float x = context.getMonsterManager()->getMonster(i)->getXPos() - context.getMonsterManager()->getPlayer()->getXPos();
+			float y = context.getMonsterManager()->getMonster(i)->getYPos() - context.getMonsterManager()->getPlayer()->getYPos();
+			float distToPlayer = sqrt((x*x) + (y*y));
 
-		if (distToPlayer <= 50)
-		{
-			context.getMonsterManager()->setBattleMonsterIndex(i);
-			context.setState(context.getBattleState());
+			if (distToPlayer <= 50)
+			{
+				context.getMonsterManager()->setBattleMonsterIndex(i);
+				context.setState(context.getBattleState());
+			}
 		}
 	}
 }
