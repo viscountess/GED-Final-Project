@@ -1,13 +1,13 @@
-#ifndef stategameover_INCLUDE
-#define stategameover_INCLUDE
+#ifndef stategamewin_INCLUDE
+#define stategamewin_INCLUDE
 
 #include "game.h"
 #include "gamestate.h"
 
-class StateGameOver : public GameState{
+class StateGameWin : public GameState{
 public:
-	StateGameOver(); //constructor
-	~StateGameOver(); //de-constructor
+	StateGameWin(); //constructor
+	~StateGameWin(); //de-constructor
 
 	virtual void init();
 	virtual void draw(SDL_Window * window, Game &context); //draw the game state 
@@ -20,6 +20,6 @@ private:
 	TTF_Font* textFont;	// SDL type for True-Type font rendering
 
 	//pointer for text label
-	Label *gameOverLabel;
+	Label *gameWinLabel;
 };
 #endif

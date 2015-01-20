@@ -5,6 +5,8 @@
 #include "StateSplashScreen.h"
 #include "StateCharacterScreen.h"
 #include "StateBattle.h"
+#include "StateGameOver.h"
+#include "StateGameWin.h"
 
 
 //Window size - windowW = width, windowH = height
@@ -115,6 +117,8 @@ void Game::init(){
 	splashState = new StateSplashScreen();
 	characterState = new StateCharacterScreen();
 	battleState = new StateBattle();
+	gameOverState = new StateGameOver();
+	gameWinState = new StateGameWin();
 	currentState = splashState;
 
 	playState->init();
@@ -123,6 +127,8 @@ void Game::init(){
 	splashState->init();
 	characterState->init();
 	battleState->init();
+	gameOverState->init();
+	gameWinState->init();
 
 	monster = new MonsterManager();
 	monster->init();

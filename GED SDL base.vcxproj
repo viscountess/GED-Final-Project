@@ -95,6 +95,7 @@
     <ClCompile Include="StateCharacterScreen.cpp" />
     <ClCompile Include="StateCreditsScreen.cpp" />
     <ClCompile Include="StateGameOver.cpp" />
+    <ClCompile Include="StateGameWin.cpp" />
     <ClCompile Include="StateMainMenu.cpp" />
     <ClCompile Include="StatePlay.cpp" />
     <ClCompile Include="StateSplashScreen.cpp" />
@@ -117,6 +118,7 @@
     <ClInclude Include="StateCharacterScreen.h" />
     <ClInclude Include="StateCreditsScreen.h" />
     <ClInclude Include="StateGameOver.h" />
+    <ClInclude Include="StateGameWin.h" />
     <ClInclude Include="StateMainMenu.h" />
     <ClInclude Include="StatePlay.h" />
     <ClInclude Include="StateSplashScreen.h" />

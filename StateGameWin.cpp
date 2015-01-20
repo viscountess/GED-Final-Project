@@ -1,44 +1,44 @@
-#include "StateGameOver.h"
+#include "StateGameWin.h"
 
 //constructor
-StateGameOver::StateGameOver(){
+StateGameWin::StateGameWin(){
 
 	//Initiatlising NULL pointers so that we dont accidently delete them
-	gameOverLabel = nullptr;
+	gameWinLabel = nullptr;
 }
 
 //deconstructor
-StateGameOver::~StateGameOver(){
+StateGameWin::~StateGameWin(){
 
 	//if memory has been allocated already then free it up
-	if (gameOverLabel != 0)
-		delete gameOverLabel;
+	if (gameWinLabel != 0)
+		delete gameWinLabel;
 }
 
-void StateGameOver::init(){
+void StateGameWin::init(){
 
 	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24);
 
 	SDL_Color displayColor = { 255, 255, 0 }; //displaycolor
 
-	gameOverLabel = new Label();
+	gameWinLabel = new Label();
 
-	gameOverLabel->textToTexture("GAME OVER", textFont, displayColor);
+	gameWinLabel->textToTexture("CONGRATS - YOU WON!!", textFont, displayColor);
 
 }
-void StateGameOver::draw(SDL_Window * window, Game &context) //draw the game state 
+void StateGameWin::draw(SDL_Window * window, Game &context) //draw the game state 
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear window
 
 	//starting point for the title
-	gameOverLabel->draw(512 - (gameOverLabel->getWidth() / 2), 450);
+	gameWinLabel->draw(512 - (gameWinLabel->getWidth() / 2), 450);
 
 
 	SDL_GL_SwapWindow(window); // swap buffers
 
 }
-void StateGameOver::handleEvent(SDL_Event const &sdlEvent, Game &context) //method to handle what state the game is at
+void StateGameWin::handleEvent(SDL_Event const &sdlEvent, Game &context) //method to handle what state the game is at
 {
 	if (sdlEvent.type == SDL_KEYDOWN)
 	{
@@ -58,15 +58,15 @@ void StateGameOver::handleEvent(SDL_Event const &sdlEvent, Game &context) //meth
 
 	}
 }
-void StateGameOver::update(Game &context) //update the gamestate
+void StateGameWin::update(Game &context) //update the gamestate
 {
 
 }
-void StateGameOver::Cleanup() //delete everything that is unused so that memory can be freed
+void StateGameWin::Cleanup() //delete everything that is unused so that memory can be freed
 {
 
 }
-void StateGameOver::enter(Game &context)
+void StateGameWin::enter(Game &context)
 {
 
 }
